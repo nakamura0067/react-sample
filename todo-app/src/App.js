@@ -10,11 +10,11 @@ import Top from './Top';
 import Todo from './Todo';
 import Schedule from './Schedule';
 import Note from './Note';
+import Footer from './Footer';
 
 export default function App() {
     return (
       <div>
-        <header>todo-app</header>
         <Router>
           <main>
             <Switch>
@@ -24,13 +24,7 @@ export default function App() {
               <Route path="/note" component={Note}/>
             </Switch>
          </main>
-        <footer>
-          <div>
-           <p><Link to="/todo">todo</Link></p>
-           <p><Link to="/schedule">Schedule</Link></p>
-           <p><Link to="/note">Note</Link></p>
-          </div>
-        </footer>
+        <Footer />
       </Router>
       </div>
     );
