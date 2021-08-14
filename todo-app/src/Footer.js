@@ -13,7 +13,7 @@ const Footer = (props) => {
     <BottomNavigation
       value={value}
       showLabels
-      style={{width: "100%"}}
+      style={{width: "100%", bottom:0, position:"absolute"}}
     >
       <BottomNavigationAction
         label = "Todo"

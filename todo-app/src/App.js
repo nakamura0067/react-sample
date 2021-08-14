@@ -24,7 +24,7 @@ export default function App() {
               <Route path="/note" component={Note}/>
             </Switch>
          </main>
-        <Footer />
+        <Footer/>
       </Router>
       </div>
     );
