@@ -1,14 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
-class Schedule extends React.Component {
-    render() {
-        return (
-            <div>
-                <p>Schedule</p>
-            </div>
-        );
+export default function Schedule() {
+ 
+    const onClickDay = value => {
+        alert('Clicked day: ' + value);
     }
+    
+    return (
+        <div>
+            <Calendar
+                onClickDay = {onClickDay}
+            />
+        </div>
+    );
 }
-
-export default Schedule;
