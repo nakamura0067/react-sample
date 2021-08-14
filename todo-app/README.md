@@ -15,3 +15,5 @@ reactの学習を目的とする
   - 1.22.10
 - create-react-app
   - 4.0.3
+- react-calender
+  - 3.4.0
