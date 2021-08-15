@@ -1,9 +1,27 @@
 import React, {useState, useMemo} from 'react';
 
-import TodoList from './components/TodoList';
 import useTodo from './hooks/useTodo';
 import TodoForm from './components/TodoForm';
-import TodoFilter from './components/TodoFilter';
+import { DataGrid } from '@material-ui/data-grid';
+import TextField from '@material-ui/core/TextField';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+
+const columns = [
+  {
+    field: 'task',
+    headerName: 'Task',
+    width: 150,
+    editable: true,
+  },
+];
+
+const rows = [
+  { id: 1, task: "aaa"},
+  { id: 2, task: "bbb"},
+  { id: 3, task: "ccc"},
+  { id: 4, task: "ddd"},
+];
 
 export default function Todo() {
 
@@ -33,14 +51,27 @@ export default function Todo() {
 
   return (
     <div>
-      <h1>Todo List</h1>
-      <TodoFilter selectedFilter={filter} handleFilter={handleFilter}/>
-      <TodoForm addTodo={addTodo}/>
-      <TodoList
+      <div style={{padding:"5px"}}>
+        {/*<TodoForm addTodo={addTodo}/>*/}
+        <TextField id="standard-basic" label="Standard" style={{width:"70vh"}}/>
+        <Fab color="primary" aria-label="add" style={{left:"5px"}}>
+          <AddIcon />
+        </Fab>
+      </div>
+      <div style={{ height: 400, width: '100%' }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSize={5}
+          checkboxSelection
+          disableSelectionOnClick
+        />
+      </div>
+      {/*<TodoList
         todos={filteredTodos}
         toggleTodo={toggleTodo}
         deleteTodo={deleteTodo}
-      />
+      />*/}
     </div>
   );
 }
